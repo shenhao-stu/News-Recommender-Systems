@@ -1,4 +1,4 @@
-﻿﻿﻿# News-Recommender-Systems
+﻿﻿﻿﻿# News-Recommender-Systems
 
 本项目是参考**Datawhale推荐系统团队**的开源教程：[Fun-Rec](https://github.com/datawhalechina/fun-rec) 中的推荐系统实战内容进行优化。从数据库、前端框架、后端框架和前后端交互的角度出发，记录笔者遇到的坑和如果填坑的过程。同时对于原项目中的部分代码和算法进行优化和较为清晰的介绍。帮助每一位visitor能够自己动手完成属于自己的新闻推荐系统项目。
 
@@ -81,7 +81,7 @@ github上给出了参考资料，其实也是用来作为查询的，因为每�
 
 如果大家最终在学习完本次的组队学习内容，可以理解下面这张流程图的话，那基本上就很不错了。因为内容真的比较多，而且比较偏向实战，如果要真的弄懂里面的详细流程需要大家花不少时间在看源码上面。
 
-![](imgs/structure.png)
+![](https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/structure.png)
 
 ## 内容导航
 
@@ -107,14 +107,14 @@ github上给出了参考资料，其实也是用来作为查询的，因为每�
 
 **新闻推荐系统前端显示页面及后端系统架构（项目没有任何商用价值仅供入门者学习**）
 
-<div align=center> <img src="imgs/web_show.png" style="zoom:57%;" />
+<div align=center> <img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/web_show.png" style="zoom:57%;" />
 </div>
 
 
 ## 项目架构图
 
 <div align=center>
-<img src="imgs/structure.png" alt="Fun-Rec新闻推荐系统" style="zoom:55%;" />
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/structure.png" alt="Fun-Rec新闻推荐系统" style="zoom:55%;" />
 </div>
 
 
@@ -125,8 +125,9 @@ github上给出了参考资料，其实也是用来作为查询的，因为每�
 
 <div align=center>
 <p>扫描下方二维码关注公众号：Datawhale</p>
-<img src="imgs/qrcode.jpeg" width = "180" height = "180">
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/qrcode.jpeg" width = "180" height = "180">
 </div>
+
 
 
 

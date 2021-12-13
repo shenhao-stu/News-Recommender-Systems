@@ -56,7 +56,7 @@
 - 注册成功后将跳转至主页面
 
 <div  align="center">    
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/注册.jpg" width = "30%" height = "30%" alt="注册"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/注册.jpg" width = "30%" height = "30%" alt="注册"/>
 </div>
 
 
@@ -67,8 +67,8 @@
 - 点进新闻详情页后阅读次数会实时增加，返回后定位在原始位置
 
 <div  align="center">    
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/推荐1.jpg" width = "30%" height = "30%" alt="推荐"/>  
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/热门.jpg" width = "30%" height = "30%" alt="热门"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/推荐1.jpg" width = "30%" height = "30%" alt="推荐"/>  
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/热门.jpg" width = "30%" height = "30%" alt="热门"/>
 </div>
 
 
@@ -80,8 +80,8 @@
 - 底部点击`喜欢`或者`收藏`可以记录将当前用户行为，并在列表页相应增加
 
 <div  align="center">    
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/新闻详情.jpg" width = "30%" height = "30%" alt="新闻详情"/>
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/新闻详情2.jpg" width = "30%" height = "30%" alt="新闻详情2"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/新闻详情.jpg" width = "30%" height = "30%" alt="新闻详情"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/新闻详情2.jpg" width = "30%" height = "30%" alt="新闻详情2"/>
 </div>
 
 - [X] **个人中心** —— 记录用户的头像和用户名
@@ -91,8 +91,8 @@
 - 显示DataWhale相关介绍
 
 <div  align="center">    
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/个人中心1.jpg" width = "30%" height = "30%" alt="个人中心1"/> 
-<img src="https://gitee.com/theNeverLemon/news-img/raw/master/img/个人中心2.jpg" width = "30%" height = "30%" alt="个人中心2"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/个人中心1.jpg" width = "30%" height = "30%" alt="个人中心1"/> 
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/个人中心2.jpg" width = "30%" height = "30%" alt="个人中心2"/>
 </div>
 
 
