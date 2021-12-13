@@ -47,4 +47,4 @@
 
 1. 跳转到前端项目文件目录：`cd $HOME/fun-rec/codes/news_recsys/news_rec_web/Vue-newsinfo`
 2. 启动前端服务：`npm run dev`
-3. 访问地址`http://localhost:3000`
+3. 访问地址`http://localhost:5000`

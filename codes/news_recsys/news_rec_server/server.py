@@ -234,7 +234,7 @@ def actions():
     
 if __name__ == '__main__':
     # 允许服务器被公开访问
-    app.run(debug=True, host='0.0.0.0', port=3000, threaded=True)
+    app.run(debug=True, host='127.0.0.1', port=5000, threaded=True)
     # 只能被自己的机子访问
     # app.run(debug=True, host='127.0.0.1', port=10086, threaded=True)
 
