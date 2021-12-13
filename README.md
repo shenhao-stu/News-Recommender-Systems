@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# News-Recommender-Systems
+﻿﻿﻿﻿﻿# News-Recommender-Systems
 
 本项目是参考**Datawhale推荐系统团队**的开源教程：[Fun-Rec](https://github.com/datawhalechina/fun-rec) 中的推荐系统实战内容进行优化。从数据库、前端框架、后端框架和前后端交互的角度出发，记录笔者遇到的坑和如果填坑的过程。同时对于原项目中的部分代码和算法进行优化和较为清晰的介绍。帮助每一位visitor能够自己动手完成属于自己的新闻推荐系统项目。
 
