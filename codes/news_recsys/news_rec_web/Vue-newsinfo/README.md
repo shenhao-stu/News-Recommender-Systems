@@ -40,7 +40,7 @@
 - `忘记密码` 暂时没有写逻辑不能使用
 
 <div  align="center">    
-<img src="../../../../imgs/登录.jpg" width = "30%" height = "30%" alt="登录"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/登录.jpg" width = "30%" height = "30%" alt="登录"/>
 </div>
 
 
@@ -67,9 +67,10 @@
 - 点进新闻详情页后阅读次数会实时增加，返回后定位在原始位置
 
 <div  align="center">    
-<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/推荐1.jpg" width = "30%" height = "30%" alt="推荐"/>  
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/推荐.jpg" width = "30%" height = "30%" alt="推荐"/>  
 <img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/热门.jpg" width = "30%" height = "30%" alt="热门"/>
 </div>
+
 
 
 
@@ -80,9 +81,10 @@
 - 底部点击`喜欢`或者`收藏`可以记录将当前用户行为，并在列表页相应增加
 
 <div  align="center">    
-<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/新闻详情.jpg" width = "30%" height = "30%" alt="新闻详情"/>
+<img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/新闻详情1.jpg" width = "30%" height = "30%" alt="新闻详情1"/>
 <img src="https://gitee.com/shenhao-stu/News-Recommender-Systems/raw/master/imgs/新闻详情2.jpg" width = "30%" height = "30%" alt="新闻详情2"/>
 </div>
+
 
 - [X] **个人中心** —— 记录用户的头像和用户名
 

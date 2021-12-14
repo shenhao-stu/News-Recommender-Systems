@@ -12,6 +12,7 @@ from dao.entity.register_user import RegisterUser
 from controller.user_action_controller import UserAction
 from collections import defaultdict
 
+# 初始化redis_server对象
 redis_server = RedisServer()
 
 class OnlineServer(object):
@@ -20,16 +21,16 @@ class OnlineServer(object):
     _instance_lock = threading.Lock()
  
     def __init__(self,):
-        self.reclist_redis_db = redis_server.get_reclist_redis()
-        self.static_news_info_redis_db = redis_server.get_static_news_info_redis()
-        self.dynamic_news_info_redis_db = redis_server.get_dynamic_news_info_redis()
-        self.exposure_redis_db = redis_server.get_exposure_redis()
-        self.register_sql_sess = MysqlServer().get_register_user_session()
-        self.cate_dict = cate_dict
+        self.reclist_redis_db = redis_server.get_reclist_redis()  # 获取用户推荐列表redis数据库
+        self.static_news_info_redis_db = redis_server.get_static_news_info_redis()  # 获取静态新闻信息数据库
+        self.dynamic_news_info_redis_db = redis_server.get_dynamic_news_info_redis()  # 获取动态新闻信息数据库
+        self.exposure_redis_db = redis_server.get_exposure_redis()  # 获取用户曝光列表redis数据库
+        self.register_sql_sess = MysqlServer().get_register_user_session()  # 获取注册用户session
+        self.cate_dict = cate_dict  # 获取映射字典 如:'2510'->'国内'
         self.cate_id_list = list(self.cate_dict.keys())
-        self.bad_case_news_log_path = bad_case_news_log_path
-        self.name2id_cate_dict = {v: k for k, v in self.cate_dict.items()}
-        self._set_user_group() 
+        self.bad_case_news_log_path = bad_case_news_log_path  # 负样本新闻的日志地址 "logs/news_bad_cases.log"
+        self.name2id_cate_dict = {v: k for k, v in self.cate_dict.items()}  # 获取类别->id的映射字典 如:'国内'->'2510'
+        self._set_user_group()  # 根据年龄和性别对用户进行分组(4)
 
     def __new__(cls, *args, **kwargs):
         if not hasattr(OnlineServer, "_instance"):
@@ -39,7 +40,7 @@ class OnlineServer(object):
         return OnlineServer._instance
     
     def _get_register_user_cold_start_redis_key(self, userid):
-        """通过查sql表得到用户的redis key进而确定当前新用户使用哪一个新的模板
+        """通过查sql表得到用户的redis key进而确定当前新用户使用哪一个新的模板(4)
         """
         user_info = self.register_sql_sess.query(RegisterUser).filter(RegisterUser.userid == userid).first()
         print(user_info)
@@ -72,6 +73,13 @@ class OnlineServer(object):
         for k, cate_list in self.user_group.items():
             for cate in cate_list:
                 self.group_to_cate_id_dict[k].append(self.name2id_cate_dict[cate])
+        # self.group_to_cate_id_dict = {
+        #     "1": ["2510", "2513", "2512", "2515"],
+        #     "2": ["2510", "2669", "2518", "2516", "2517"],
+        #     "3": ["2510", "2517", "2512", "2515"],
+        #     "4": ["2511", "2510", "2514", "2669", "2518", "2516", "2517"]
+        # }
+
 
     def _get_register_user_group_id(self, age, gender):
         """获取注册用户的分组,
@@ -93,9 +101,13 @@ class OnlineServer(object):
         """
         # 遍历当前分组的新闻类别
         for cate_id in self.group_to_cate_id_dict[group_id]:
+            # 根据用户年龄和性别判断其group_id,我们假设 group_id = 1
+            # 将具体的group_id中的所有分类全部添加到redis中
+            # cold_start_group:1:2510 -> 1:国际 from {"1": ["国内","娱乐","体育","科技"]}
             group_redis_key = "cold_start_group:{}:{}".format(group_id, cate_id)
+            # cold_start_user:user_id:2510 -> user_id 国际 from {"1": ["国内","娱乐","体育","科技"]}
             user_redis_key = "cold_start_user:{}:{}".format(user_id, cate_id)
-            self.reclist_redis_db.zunionstore(user_redis_key, [group_redis_key])
+            self.reclist_redis_db.zunionstore(user_redis_key, [group_redis_key])  # 添加到redis中
         # 将用户的类别集合添加到redis中
         cate_id_set_redis_key = "cold_start_user_cate_set:{}".format(user_id)
         self.reclist_redis_db.sadd(cate_id_set_redis_key, *self.group_to_cate_id_dict[group_id])
@@ -105,7 +117,7 @@ class OnlineServer(object):
         """
         if rec_type == 'hot_list':
             # 判断用户是否存在热门列表
-            cate_id = self.cate_id_list[0] # 随机选择一个就行
+            cate_id = self.cate_id_list[0]  # 随机选择一个就行
             hot_list_user_key = "user_id_hot_list:{}:{}".format(str(user_id), cate_id)
             if self.reclist_redis_db.exists(hot_list_user_key) == 0:
                 # 给用户拷贝一份每个类别的倒排索引

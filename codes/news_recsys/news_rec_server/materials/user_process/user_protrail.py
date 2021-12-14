@@ -56,6 +56,7 @@ class UserProtrail(object):
         """每天都需要将当天注册的用户添加到用户画像池中
         """
         # 遍历注册用户表
+        RegisterUser()
         for user in self.register_user_sess.query(RegisterUser).all():
             user_info_dict = self._user_info_to_dict(user)
             old_user_protrail_dict = self.user_protrail_collection.find_one({"username": user.username})

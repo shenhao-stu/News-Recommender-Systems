@@ -93,7 +93,7 @@ def rec_list():
     age = request.args.get('age')
     gender = request.args.get('gender')
     
-    # 如果年龄无法转int说明是老用户，不需要传age 和 gender 
+    # 如果年龄无法转int说明是老用户，不需要传age和gender
     try:
         age = int(age)
     except:
